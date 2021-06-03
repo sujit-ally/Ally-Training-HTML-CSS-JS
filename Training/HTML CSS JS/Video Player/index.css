@@ -1,10 +1,7 @@
 body{
     font-family: 'Open Sans', sans-serif;
     margin: 0;
-}
-
-body{
-  background-color: #87CEEB;
+    background-color: #87CEEB; 
 }
 
 header{
@@ -16,6 +13,26 @@ header{
 .title, nav, .author, .gitLink{
     display: inline;
     font-size: 24
+}
+
+.title{
+    font-family: 'Caveat Brush', cursive;
+    font-size: 90px;
+    text-align: center;
+    color: #fad744;
+    text-shadow: 2px 5px #2b3252;
+    margin: 0;
+}
+
+.container {
+    margin: auto;
+    margin-top: 36px;
+    width: 60%;
+    height: 100%;
+    border-radius: 6px;
+    padding: 16px;
+    background-color: white;
+    color: black;
 }
 
 nav{
@@ -42,11 +59,30 @@ aside{
 .card{
     border: 1px solid;
     margin: 21px;
+    
 }
 
-.login{
-    border: 1px solid; 
-    /* width: 200px; */
+.dish-desciption{
+    font-size: 10;
+}
+
+.dish-card{
+    width: 300px;
+    height: 250px;
+    margin: 10px;
+    display: block;
+    cursor: pointer;
+    text-align: center;
+    background-color: white;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+.dish-card img{
+    width: 300px;
+    height: 200px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
 }
 
 label{
