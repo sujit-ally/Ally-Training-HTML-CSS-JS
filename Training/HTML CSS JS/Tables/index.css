@@ -3,9 +3,9 @@ table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
     text-align: start;
+    padding: 5px
   }
   
   #colored-box {
-      background-color: red;
-      text-align: start;
+      background-color: #87CEEB;
   }
