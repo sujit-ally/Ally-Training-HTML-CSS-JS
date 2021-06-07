@@ -1,121 +1,120 @@
-nav{
-    margin: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: 'Signika Negative', sans-serif;
-
+nav {
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Signika Negative", sans-serif;
 }
-body{
-    font-family: 'Signika Negative', sans-serif;
-    background-color: whitesmoke;
+body {
+  font-family: "Signika Negative", sans-serif;
+  background-color: whitesmoke;
 }
 .stunning-log {
-    height: 50px;
-    margin: 20px;
+  height: 50px;
+  margin: 20px;
 }
 
-.account-section, .new-account{
-    width: 200px;
-    height: 70px;
-    text-align: center;
-    border-radius: 30px;
-    background-color: pink;
-    /* align-items: center; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.account-section,
+.new-account {
+  width: 200px;
+  height: 70px;
+  text-align: center;
+  border-radius: 30px;
+  background-color: pink;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.new-account-row{
-    padding: 10%;
-    display: flex;
-    justify-content: space-between;
-    width: 400px;
+.new-account-row {
+  padding: 10%;
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
 }
-.new-account{
-    background-color: blueviolet;
-}
-
-.new-account h2{
-    font-size: 16px;
-    font-style:normal;
-    color: white;
+.new-account {
+  background-color: blueviolet;
 }
 
-.account-section h2{
-    font-size: 16px;
-    font-style:normal;
-    color: blueviolet;
+.new-account h2 {
+  font-size: 16px;
+  font-style: normal;
+  color: white;
 }
 
+.account-section h2 {
+  font-size: 16px;
+  font-style: normal;
+  color: blueviolet;
+}
 
 .nav-bar {
-    display: inline; 
+  display: inline;
 }
 
-.nav-bar a{
-    color: black;
-    font-size: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
+.nav-bar a {
+  color: black;
+  font-size: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .nav-bar > a > .about {
-    color: blue;
-    margin: 100; 
-    padding-left: 10;
-    padding-right: 10;
+  color: blue;
+  margin: 100;
+  padding-left: 10;
+  padding-right: 10;
 }
 
 .container {
-    display: flex;
-    text-align: center;
-    /* margin: 50px; */
+  display: flex;
+  text-align: center;
+  /* margin: 50px; */
 }
 
-.left-body{
-    /* display: flex; */
-    width: 50%;
-    align-items: flex-start;
+.left-body {
+  /* display: flex; */
+  width: 50%;
+  align-items: flex-start;
 }
 
-.left-body > h1, h5{
-    text-align: start;
-    padding-left: 10%;
+.left-body > h1,
+h5 {
+  text-align: start;
+  padding-left: 10%;
 }
-.left-body > h1{
-    font-size: 70px;
+.left-body > h1 {
+  font-size: 70px;
 }
-.left-body > h5{
-    font-size: 20px;
-    color: grey;
-}
-
-.right-body{
-    display: flex;
-    width: 50%;
+.left-body > h5 {
+  font-size: 20px;
+  color: grey;
 }
 
-.right-body > img{
-    display: block;
-    width: 95%;
+.right-body {
+  display: flex;
+  width: 50%;
+  justify-content: center;
 }
 
-.work-type-row, .work-type-row-selected{
-    padding: 10px; 
-    margin-top: 10%;
-    margin-left: 10%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    background-color: lightgrey;
-    border-radius: 10px;
-    margin-top: 10px;
-    width: 300px;
+.right-body > img {
+  width: 95%;
 }
 
-.work-type-row-selected{
-    background-color: white;
+.work-type-row,
+.work-type-row-selected {
+  padding: 10px;
+  margin-top: 10%;
+  margin-left: 10%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: lightgrey;
+  border-radius: 10px;
+  margin-top: 10px;
+  width: 350px;
+}
 
+.work-type-row-selected {
+  background-color: white;
 }
