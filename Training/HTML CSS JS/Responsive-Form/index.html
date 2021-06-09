@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <title>Dynamic Array</title>
+  </head>
+  <body>
+    <div class="container">
+      <input id="inpute-size" placeholder="Enter Value" />
+      <button id="generate-button">Generate</button>
+      <div id="Result-List">Boxes</div>
+    </div>
+
+    <script>
+      const input = document.querySelector("#inpute-size");
+      const button = document.querySelector("#generate-button");
+      const result = document.querySelector("#Result-List");
+
+      button.addEventListener("click", (event) => {
+        let n = Number(input.value);
+
+        for (var i = 0; i < n; i++) {
+          console.log(i);
+          var box = document.createElement("div");
+          box.className = "box";
+          box.textContent = `Box ${i}`;
+          // generate random color
+          color = "#" + (((1 << 24) * Math.random()) | 0).toString(16);
+
+          box.style.backgroundColor = color;
+          result.appendChild(box);
+        }
+      });
+    </script>
+  </body>
+</html>
