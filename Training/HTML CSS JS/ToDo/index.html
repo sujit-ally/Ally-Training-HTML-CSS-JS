@@ -24,29 +24,28 @@
 
       <div id="Notes-List"></div>
       <script>
-        var notes = [];
+        
         const notesList = document.getElementById("Notes-List");
-
-        for (var i = 0; i < 5; i++) {
-          notes.push(`new note ${i}`);
-        }
-
         const addButton = document.querySelector("#input-button");
         const inputNote = document.querySelector("#input-note");
+
+
         addButton.addEventListener("click", (event) => {
-          console.log(notes);
           const newNote = document.createElement("div");
           let id = Math.random();
           newNote.id = id;
           newNote.className = "Note";
           newNote.textContent = inputNote.value;
+          
+          // delete button for every note
           const deleteButton = document.createElement("button");
           deleteButton.className = "deleteButton";
           deleteButton.textContent = "Delete me";
+
           deleteButton.addEventListener("click", (event) => {
-            console.log(`notes ${id} should be deleted`);
             newNote.remove();
           });
+          
           newNote.appendChild(deleteButton);
           notesList.appendChild(newNote);
         });
