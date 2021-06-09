@@ -1,5 +1,5 @@
 body{
-  background:   radial-gradient(red, orange); 
+  background:   lightpink; 
   /* linear-gradient(red, orange); */
   
   
@@ -31,7 +31,7 @@ body{
 }
 
 .deleteButton{
-background-color: orange;
+background-color: lightseagreen;
   margin: 10px;
   width: 100px;
   height: 30px;
