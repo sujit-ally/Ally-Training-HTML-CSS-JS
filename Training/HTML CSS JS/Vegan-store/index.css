@@ -1,54 +1,186 @@
-.navbar-vegan{
-    background-color: white;
-    position: fixed;
-    top: 0;
-    width:100%;
+.navbar-vegan {
+  background-color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
-.btn-buy{
-    background-color: rgb(170, 210, 54);
-    font-size: 12px;
-    font-weight: 600;
-    color: white;
+.btn-buy {
+  background-color: rgb(170, 210, 54);
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
 }
 
-.btn-blocks{
-    background-color: white;
-    border: none;
-    display: none;
+.btn-blocks {
+  background-color: white;
+  border: none;
+  display: none;
 }
 
-.banner{
-    width: 100%;
-    height: 100vh;
-    background-image: url(https://edyoda.s3.ap-south-1.amazonaws.com/public/landing-background.png);
-    background-position: left;
-    background-size: cover;
-    margin-top: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.banner {
+  width: 100%;
+  height: 100vh;
+  background-image: url(https://edyoda.s3.ap-south-1.amazonaws.com/public/landing-background.png);
+  background-position: left;
+  background-size: cover;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .banner > h1 {
-    letter-spacing: 10px;
-    text-align: center;
-    max-width: 1100px;
-    font-weight: 600;
-    margin-bottom: 40px;
+  letter-spacing: 10px;
+  text-align: center;
+  max-width: 1100px;
+  font-weight: 600;
+  margin-bottom: 40px;
 }
 
+.banner > p {
+  padding: 30px;
+  text-align: center;
+  color: grey;
+}
 @media screen and (min-width: 400px) {
-    .btn-blocks{
-        display: block;
-        margin-right: 20px;
-    }
+  .btn-blocks {
+    display: block;
+    margin-right: 20px;
+  }
+  
 }
 
 @media screen and (max-width: 1100px) {
-    .btn-blocks{
-        display: none;
-        margin-right: 20px;
-    }
+  .btn-blocks {
+    display: none;
+    margin-right: 20px;
+  }
+
+  
+  
+}
+
+.card {
+  padding: 112px 48px;
+  border-radius: 0;
+}
+
+.card-text,
+.card-title {
+  color: white;
+  text-align: center;
+  padding-top: 30px;
+}
+.card-title {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.fa, .fas {
+  font-size: 72px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  transition: all 0.3s;
+}
+.fa-cut,
+.fa-paint-brush,
+.fa-shopping-bag {
+  color: white;
+}
+
+.card1 {
+  background-color: #5acda6;
+}
+.card2 {
+  background-color: #91ac41;
+}
+.card3 {
+  background-color: #e4b476;
+}
+.card4 {
+  background-color: #f69dad;
+}
+
+.feature-section > .Store-Details > h2 {
+  margin: 0;
+  margin-top: 0px;
+  padding-top: 40px;
+  color: #91ac41;
+  font-size: 24px;
+  font-family: "Caveat", cursive;
+  /* margin-top: 35px; */
+}
+
+.feature-card{
+padding: 40px;
+}
+
+.feature-section > .Store-Details > h1 {
+    margin: 0;
+padding-top: 10px;
+  font-size: 44px;
+  font-weight: 600;
+  margin-bottom: 0px;
+  margin-bottom: 8px;
+}
+
+.feature-section > .Store-Details > h5  {
+  font-size: 16px;
+  padding-top: 10px;
+  font-weight: 500;
+  margin-bottom: 0px;
+  letter-spacing: 0.5px;
+}
+.feature-section {
+  /* margin: 20px; */
+
+  width: 100%;
+  text-align: center;
+  background-color: #f7eee2;
+}
+
+.features{
+    margin: 0;
+    display: flex;
+    height: 500px;
+}
+
+.feature-logo > .circle{
+    display: flex;
+    justify-content: center;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.feature-logo{
+    display: flex;
+    justify-content: center;
+}
+
+.feature-description{
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    font-weight: normal;
+}
+.feature-card >h6 {
+    margin: 20px;
+    color: #8b8b99;
+}
+.feaure-name{
+    margin: 24;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.circle{
+    border-radius: 50%;
+    background-color: #e3b375;
+    width: 120px;
+    height: 120px;
+    margin: 10px;
 }
