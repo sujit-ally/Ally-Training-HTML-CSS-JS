@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vegan</title>
+
+
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+
+    <div>
+        <h1 >Grid Template</h1>
+    </div>
+    <script src="./common-data.js"></script>
+
+    <div class="clothing-section">
+        <h2 >Clothing for Men and Women</h2>
+        <div class="container">
+            <div class="row">
+              <div class="col-5">
+                1 of 3
+              </div>
+            </div>
+        </div>
+
+
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="..." alt="Card image cap">
+            <div class="card-body">
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+    </div>
+
+    <div class="accessories-section">
+        <h2 >Accessories for Men and Women</h2>
+    </div>
+    <div id="products"></div>
+    <script>
+        let title;
+        let productElement, imageElement;
+        const products = document.getElementById("products")
+
+        for (let product of productList) {
+            const { name, description, preview } = product;
+            productElement = document.createElement('div');
+            productElement.style.width = '15%';
+            productElement.style.color = 'red';
+            productElement.textContent = name;
+
+            // Description
+            descriptionElement = document.createElement('p');
+            descriptionElement.textContent = description;
+            descriptionElement.style.color = 'blue';
+            productElement.appendChild(descriptionElement)
+
+            //Image
+            imageElement = document.createElement('img');
+            imageElement.src = preview;
+            imageElement.width = '300';
+            productElement.appendChild(imageElement)
+
+
+            //Append ALL
+            products.appendChild(productElement)
+        }
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+
+    </h1>
+    <button class="start-button">
+        start
+    </button>
+
+    <button class="stop-button">
+        stop
+    </button>
+    <script>
+        const timeTarget = document.querySelector('h1')
+        const StartButton = document.querySelector('.start-button')
+        const StopButton = document.querySelector('.stop-button')
+
+        let customInterval = 1000
+        StartButton.addEventListener("click", (event) => {
+            customInterval = 1000
+        })
+        StopButton.addEventListener("click", (event) => {
+            customInterval = 0
+        })
+
+        setInterval(() => {
+            const currentDate = new Date();
+            timeTarget.textContent = `${currentDate.getHours()} : ${currentDate.getMinutes()} : ${currentDate.getSeconds()}`
+            console.log(`customInterval: ${customInterval}`)
+        }, customInterval)
+
+
+    </script>
+    
+</body>
+</html>
