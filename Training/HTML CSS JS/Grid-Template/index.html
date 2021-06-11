@@ -2,80 +2,110 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vegan</title>
 
-
     <!--Font Awesome-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
     <!-- Bootstrap CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
 
-    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./index.css" />
 </head>
 
 <body>
-
     <div>
-        <h1 >Grid Template</h1>
+        <h1 class="Title">Grid Template</h1>
     </div>
     <script src="./common-data.js"></script>
 
     <div class="clothing-section">
-        <h2 >Clothing for Men and Women</h2>
+        <h2>Clothing for Men and Women</h2>
         <div class="container">
-            <div class="row">
-              <div class="col-5">
-                1 of 3
-              </div>
+            <div class="row" id="clothing-row">
             </div>
         </div>
-
-
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="..." alt="Card image cap">
-            <div class="card-body">
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-          </div>
     </div>
-
+    </div>
     <div class="accessories-section">
-        <h2 >Accessories for Men and Women</h2>
+        <h2>Accessories for Men and Women</h2>
+        <div class="row" id="accessories-row">
+        </div>
     </div>
     <div id="products"></div>
+    
     <script>
         let title;
-        let productElement, imageElement;
-        const products = document.getElementById("products")
+        let productName, imageElement;
+
+
+        const products = document.getElementById("products");
+        const clothingRow = document.getElementById("clothing-row");
+        const accessoriesRow = document.getElementById("accessories-row");
 
         for (let product of productList) {
-            const { name, description, preview } = product;
-            productElement = document.createElement('div');
-            productElement.style.width = '15%';
-            productElement.style.color = 'red';
-            productElement.textContent = name;
+            const { name, brand, preview, price, isAccessory } = product;
+            productName = document.createElement("div");
+            productName.textContent = name;
+            productName.className = "product-name";
 
-            // Description
-            descriptionElement = document.createElement('p');
-            descriptionElement.textContent = description;
-            descriptionElement.style.color = 'blue';
-            productElement.appendChild(descriptionElement)
-
-            //Image
-            imageElement = document.createElement('img');
+            // product brand
+            productBrand = document.createElement("h4");
+            productBrand.textContent = brand;
+            productBrand.className = "product-brand"
+            
+            // product price
+            productPrice = document.createElement("h5");
+            productPrice.textContent = "Rs " + price;
+            productPrice.className = "product-price"
+            
+            //product Image
+            imageElement = document.createElement("img");
+            imageElement.className = "card-img-top"
+            imageElement.alt = "Card image cap"
             imageElement.src = preview;
-            imageElement.width = '300';
-            productElement.appendChild(imageElement)
+            
+            // productName.appendChild(productPrice);
+            // productName.appendChild(imageElement);
+            // productName.appendChild(productBrand);
+
+            //////////////// CARD
+
+            mainCard = document.createElement("div");
+            mainCard.className = "col-xl-2 col-lg-3 col-md-6 col-sm-9 .col-12"
 
 
-            //Append ALL
-            products.appendChild(productElement)
+            cardElement = document.createElement('div');
+            cardElement.className = "card"
+            cardElement.style = "width: 10rem;"
+            cardElement.style = "hieght: 10rem;"
+            
+
+            cardElement.appendChild(imageElement)
+            
+            cardBodyElemt = document.createElement('div');
+            cardBodyElemt.className = "card-body"
+
+            cardBodyElemt.appendChild(productName)
+            cardBodyElemt.appendChild(productBrand)
+            cardBodyElemt.appendChild(productPrice)
+            
+            
+            cardElement.appendChild(cardBodyElemt)
+            mainCard.appendChild(cardElement)
+
+
+            if (isAccessory)
+                accessoriesRow.appendChild(mainCard)
+            else
+                clothingRow.appendChild(mainCard)
         }
-        
+
+
     </script>
 </body>
 
