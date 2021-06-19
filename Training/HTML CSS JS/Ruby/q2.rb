@@ -1,16 +1,10 @@
-class Book
-  def initialize(bookName, author, price)
-    @book_name =bookName
-    @author =author
-    @price =price
-  end
+# HomeWork for weekend
+#
+#
+the_count = [1, 2, 3, 4, 5]
+fruits = ['apples', 'oranges', 'pears', 'apricots']
+change = [1, 'pennies', 2, 'dimes', 3, 'quarters']
 
-  def get_details
-    puts "Book Name is :" + @book_name
-    puts "Author Name is :" + @author
-    puts "Price is :" + @price
-  end
-end
-
-new_book = Book.new("XYZ", "Sachin", 1000)
-new_book.get_details()
+the_count.each { |val| puts `This is count ${val}`}
+fruits.each { |val| puts `A type of fruit: ${val}`}
+change.each { |val| puts `I got ${val}`}
