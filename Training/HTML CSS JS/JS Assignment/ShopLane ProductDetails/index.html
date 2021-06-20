@@ -1,13 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./index.css" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./index.css" rel="stylesheet" />
+    <!-- external css -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
     <title>Shoplane App</title>
-</head>
-<body>
-    <h1>Body</h1>
-</body>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">SHOP<span class="sr-only">LANE</span></a>
+
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link home" href="#">HOME</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link clohting" href="#">CLOTHES</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link accessories" href="#">Accessories</a>
+          </li>
+        </ul>
+      </div>
+      <div class="icons">
+        <i class="fa fa-search"></i>
+        <div class="cart" id="cartIcon">
+          <a href="./checkout.html">
+            <i class="fa fa-shopping-cart">
+              <span id="cart-count">6</span>
+            </i>
+          </a>
+        </div>
+        <i class="fa fa-user-circle-o"></i>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarTogglerDemo03"
+          aria-controls="navbarTogglerDemo03"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Production Section -->
+    <section class="Product-Section">
+      <!-- Main Preview Image -->
+      <div class="Product-Img-Section">
+        <img
+          id="product-main-image"
+          src="https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7579188/2018/11/5/08a7b230-ee8f-46c0-a945-4e835a3c01c01541402833619-United-Colors-of-Benetton-Men-Sweatshirts-1271541402833444-1.jpg"
+        />
+      </div>
+
+      <!-- Product Details section-->
+      <div class="Product-Detail-Section">
+        <h1 id="product-name">Men Navy Blue Solid Sweatshirt</h1>
+        <div id="product-brand">product-brand</div>
+        <div id="product-price">product-price</div>
+        <div id="description-title">Description</div>
+        <p id="product-description">product-description paharagraph</p>
+        <div id="product-preview">Product Preview</div>
+        <div id="preview-row" class="row"></div>
+
+        <button id="add-to-cart">Add to Cart</button>
+      </div>
+
+      <script src="./data.js"></script>
+      <script type="text/javascript">
+        const { id, name, preview, photos, description, brand, price } =
+          productData;
+
+        var c = document.getElementById("product-main-image");
+        // setting name
+        var nameElement = document.getElementById("product-name");
+        nameElement.textContent = name;
+
+        // setting brand
+        var brandElement = document.getElementById("product-brand");
+        brandElement.textContent = brand;
+        brandElement.style = "font-weight: normal;";
+
+        // setting price
+        var priceElement = document.getElementById("product-price");
+        priceElement.textContent = "Price: Rs ";
+
+        var priceTag = document.createElement("span");
+        priceTag.textContent = price;
+        priceTag.className = "price-tag";
+        priceTag.style = "color:  #009688; margin-top: 20px;";
+
+        priceElement.appendChild(priceTag);
+
+        // setting description
+        var descriptionElement = document.getElementById("product-description");
+        descriptionElement.textContent = description;
+
+        var previewRow = document.getElementById("preview-row");
+        var mainPreview = document.getElementById("product-main-image");
+
+        for (let i = 0; i < photos.length; i++) {
+          photo = photos[i];
+          // var newColEmemnt = document.createElement("div");
+          // newColEmemnt.className = "PreviewImage col-12";
+
+          var ImageElemt = document.createElement("img");
+          ImageElemt.id = i;
+          ImageElemt.className = "PreviewImage";
+          ImageElemt.src = photo;
+
+          ImageElemt.addEventListener("click", function () {
+            document.getElementById("product-main-image").src = photos[i];
+          });
+
+          ImageElemt.addEventListener("click", function () {
+            ImageElemt.addclass("active").siblings().removeclass("active");
+          });
+          previewRow.appendChild(ImageElemt);
+        }
+      </script>
+    </section>
+
+    <footer class="bg-dark text-center text-lg-start" style="background-color: black">
+      <!-- Grid container -->
+      <div class="container p-4">
+        <!--Grid row-->
+        <div class="row">
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase text-light">Online Store</h5>
+
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a href="#!" class="text-light">Men Clothing</a>
+              </li>
+              <li>
+                <a href="#!" class="text-light">Women Clothing</a>
+              </li>
+              <li>
+                <a href="#!" class="text-light">Men Accessories</a>
+              </li>
+              <li>
+                <a href="#!" class="text-light">Women Accessories</a>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase mb-0 text-light">Helpful Links</h5>
+
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!" class="text-light">Home</a>
+              </li>
+              <li>
+                <a href="#!" class="text-light">About</a>
+              </li>
+              <li>
+                <a href="#!" class="text-light">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase text-light">Patners</h5>
+
+            <ul class="list-unstyled mb-0 ">
+              <li>
+                <a href="#!" class="text-light">Zara</a>
+              </li>
+              <li>
+                <a href="#!" class="text-light">Pantaloons</a>
+              </li>
+              <li>
+                <a href="#!" class="text-light">Levis</a>
+              </li>
+              <li>
+                <a href="#!" class="text-light">Ucb</a>
+              </li>
+              <li>
+                <a href="#!" class="text-light">+ Many More</a>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase mb-0 text-light">Address</h5>
+
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!" class="text-light">Building 101</a>
+              </li>
+              <li>
+                <a href="#!" class="text-light">Central Avenue</a>
+              </li>
+              <li>
+                <a href="#!" class="text-light">LA - 902722</a>
+              </li>
+              <li>
+                <a href="#!" class="text-light">United States</a>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </div>
+      <!-- Grid container -->
+
+    </footer>
+
+    <!-- footer -->
+  </body>
 </html>

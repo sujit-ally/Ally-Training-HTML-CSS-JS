@@ -9,7 +9,7 @@ var productData = {
       "https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7579188/2018/11/5/66490b64-32de-44b4-a6e4-fe36f1c040051541402833548-United-Colors-of-Benetton-Men-Sweatshirts-1271541402833444-4.jpg",
       "https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7579188/2018/11/5/957be784-7c5d-4e90-ab9f-0928015b22891541402833645-United-Colors-of-Benetton-Men-Sweatshirts-1271541402833444-5.jpg"
     ],
-    "description": "Navy solid sweatshirt with patchwork, has a round neck, long sleeves, straight hem",
+    "description": "Navy Solid sweatshirt with patchwork, has a round neck, long sleeves, straight hem",
     "size": [
       1,
       1,
