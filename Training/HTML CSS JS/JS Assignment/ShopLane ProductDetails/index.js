@@ -1,26 +1,52 @@
-<script src="./data.js"></script>
-
 const { id, name, preview, photos, description, brand, price } = productData;
-console.log(photos);
 
 var c = document.getElementById("product-main-image");
+// setting name
 var nameElement = document.getElementById("product-name");
 nameElement.textContent = name;
 
+// setting brand
 var brandElement = document.getElementById("product-brand");
 brandElement.textContent = brand;
+brandElement.style = "font-weight: normal;";
 
+// setting price
 var priceElement = document.getElementById("product-price");
-priceElement.textContent = "Rs. " + price;
+priceElement.textContent = "Price: Rs ";
 
-var titleElement = document.getElementById("description-title");
-titleElement.textContent = titleElement;
+var priceTag = document.createElement("span");
+priceTag.textContent = price;
+priceTag.className = "price-tag";
+priceTag.style = "color:  #009688; margin-top: 20px;";
 
+priceElement.appendChild(priceTag);
+
+// setting description
 var descriptionElement = document.getElementById("product-description");
 descriptionElement.textContent = description;
 
-var c = document.getElementById("product-main-image");
 var previewRow = document.getElementById("preview-row");
-console.log(c);
-c.src =
-  "https://images.unsplash.com/photo-1612151855475-877969f4a6cc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aGQlMjBpbWFnZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80";
+var mainPreview = document.getElementById("product-main-image");
+
+for (let i = 0; i < photos.length; i++) {
+  photo = photos[i];
+
+  var ImageElemt = document.createElement("img");
+  ImageElemt.id = i;
+  if (i == 0) ImageElemt.className = "PreviewImage active-preview";
+  else ImageElemt.className = "PreviewImage";
+  ImageElemt.src = photo;
+
+  ImageElemt.addEventListener("click", function () {
+    document.getElementById("product-main-image").src = photos[i];
+  });
+
+  ImageElemt.addEventListener("click", function (i) {
+    allPreview = document.getElementsByClassName("PreviewImage");
+    for (element of allPreview) {
+      element.classList.remove("active-preview");
+    }
+    i.target.classList.add("active-preview");
+  });
+  previewRow.appendChild(ImageElemt);
+}

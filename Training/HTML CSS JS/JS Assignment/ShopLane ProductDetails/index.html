@@ -90,6 +90,8 @@
       </div>
 
       <script src="./data.js"></script>
+      <script src="./index.css"></script>
+
       <script type="text/javascript">
         const { id, name, preview, photos, description, brand, price } =
           productData;
@@ -124,35 +126,37 @@
 
         for (let i = 0; i < photos.length; i++) {
           photo = photos[i];
-          // var newColEmemnt = document.createElement("div");
-          // newColEmemnt.className = "PreviewImage col-12";
 
           var ImageElemt = document.createElement("img");
           ImageElemt.id = i;
-          ImageElemt.className = "PreviewImage";
+          if (i == 0) ImageElemt.className = "PreviewImage active-preview";
+          else ImageElemt.className = "PreviewImage";
           ImageElemt.src = photo;
 
           ImageElemt.addEventListener("click", function () {
             document.getElementById("product-main-image").src = photos[i];
           });
 
-          ImageElemt.addEventListener("click", function () {
-            ImageElemt.addclass("active").siblings().removeclass("active");
+          ImageElemt.addEventListener("click", function (i) {
+            allPreview = document.getElementsByClassName("PreviewImage");
+            for (element of allPreview) {
+              element.classList.remove("active-preview");
+            }
+            i.target.classList.add("active-preview");
           });
           previewRow.appendChild(ImageElemt);
         }
       </script>
     </section>
 
-    <footer class="bg-dark text-center text-lg-start" style="background-color: black">
-      <!-- Grid container -->
+    <footer
+      class="bg-dark text-center text-lg-start"
+      style="background-color: black"
+    >
       <div class="container p-4">
-        <!--Grid row-->
         <div class="row">
-          <!--Grid column-->
           <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
             <h5 class="text-uppercase text-light">Online Store</h5>
-
             <ul class="list-unstyled mb-0">
               <li>
                 <a href="#!" class="text-light">Men Clothing</a>
@@ -168,9 +172,7 @@
               </li>
             </ul>
           </div>
-          <!--Grid column-->
-
-          <!--Grid column-->
+           
           <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
             <h5 class="text-uppercase mb-0 text-light">Helpful Links</h5>
 
@@ -186,13 +188,11 @@
               </li>
             </ul>
           </div>
-          <!--Grid column-->
 
-          <!--Grid column-->
           <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
             <h5 class="text-uppercase text-light">Patners</h5>
 
-            <ul class="list-unstyled mb-0 ">
+            <ul class="list-unstyled mb-0">
               <li>
                 <a href="#!" class="text-light">Zara</a>
               </li>
@@ -210,9 +210,7 @@
               </li>
             </ul>
           </div>
-          <!--Grid column-->
 
-          <!--Grid column-->
           <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
             <h5 class="text-uppercase mb-0 text-light">Address</h5>
 
@@ -231,14 +229,8 @@
               </li>
             </ul>
           </div>
-          <!--Grid column-->
         </div>
-        <!--Grid row-->
       </div>
-      <!-- Grid container -->
-
     </footer>
-
-    <!-- footer -->
   </body>
 </html>
