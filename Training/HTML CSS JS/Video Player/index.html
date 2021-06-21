@@ -22,48 +22,89 @@
       <h1 class="title">Video Player</h1>
     </header>
 
-    <div class="container">
-      <section>
-        <div class="Main-Dish">
-          <video class="video" controls>
-            <source
-              src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-              type="video/mp4"
-            />
-          </video>
-          <br />
-          <p class="views">98.4k views</p>
+    <section
+      style="
+        display: flex;
+        height: 100%;
+        /* background-color: aliceblue; */
+        margin: 5%;
+        padding: 5%;
+      "
+    >
+      <div class="Main-Dish">
+        <iframe
+          class="video-player video"
+          id="main-video"
+          id="video-player"
+          src="https://player.vimeo.com/video/190062231"
+          frameborder="0"
+          webkitallowfullscreen
+          mozallowfullscreen
+          allowfullscreen
+        >
+        </iframe>
+
+        <br />
+        <div style="width: 700px">
+          <p class="views" id="views">98.4k views</p>
           <hr />
-          <div class="dish-desciption">
+          <h1 id="dish-name" id="views">DishName</h1>
+          <div class="dish-desciption" id="dish-desciption">
             There is no other way but to commit wholeheartedly to a relationship
             with a croissant. We have all found ourselves at the mercy of its
             allure. Here, in another epic film by the uber talented Nathan
             Rodger, our Erin divulges her personal romance with The Croissant.
           </div>
         </div>
-      </section>
+      </div>
 
       <div class="vl"></div>
-      <aside>
-        <div class="dish-card">
-          <img
-            src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
-          />
-          <div>Croissants| Flour ans Stone</div>
-        </div>
-        <div class="dish-card">
-          <img
-            src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
-          />
-          <div>Dish Name</div>
-        </div>
-        <div class="dish-card">
-          <img
-            src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
-          />
-          <div>Dish Name</div>
-        </div>
-      </aside>
-    </div>
+      <aside id="store-row" style="width: 400px"></aside>
+      <script>
+        asideElemt = document.getElementById("store-row");
+        videoElemt = document.getElementById("main-video");
+        descriptionElemt = document.getElementById("dish-desciption");
+        viewElemt = document.getElementById("views");
+        var dishNameElemt = document.getElementById("dish-name");
+
+        fetch("https://5d76bf96515d1a0014085cf9.mockapi.io/playlist")
+          .then((response) => response.json())
+          .then((data) => {
+            for (store of data) {
+              dishCard = document.createElement("div");
+              dishCard.className = "dish-card";
+
+              imageElement = document.createElement("img");
+              imageElement.src = store["thumbnail"];
+              imageElement.id = store["id"];
+
+              nameElement = document.createElement("div");
+              nameElement.id = store["id"];
+              nameElement.textContent = store["title"];
+
+              dishCard.appendChild(imageElement);
+              dishCard.appendChild(nameElement);
+
+              dishCard.addEventListener("click", (obj) => {
+                url = `http://5d76bf96515d1a0014085cf9.mockapi.io/video/${Number(
+                  obj.target.id
+                )}`;
+                fetch(url)
+                  .then((response) => response.json())
+                  .then((Storedata) => {
+                    dishNameElemt.textContent = Storedata["title"];
+                    descriptionElemt.textContent = Storedata["description"];
+                    viewElemt.textContent = `${
+                      Storedata["views"] / 1000
+                    }K Views`;
+                    console.log(videoElemt);
+                    videoElemt.src = `https://player.vimeo.com/video/${Storedata["vimeoId"]}`;
+                  });
+              });
+              asideElemt.appendChild(dishCard);
+            }
+          });
+      </script>
+    </section>
   </body>
 </html>
