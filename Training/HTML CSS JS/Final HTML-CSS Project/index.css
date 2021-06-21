@@ -69,23 +69,20 @@
   justify-content: space-between;
 }
 
-.block2 > .main-heading1,
-.block3 > .main-heading1 {
+.block2 > .main-heading1 {
   margin-top: 0;
   font-size: 97px;
   line-height: 107px;
   text-align: left;
 }
 
-.block2 > .sub-heading1,
-.block3 > .main-heading1 {
+.block2 > .sub-heading1 {
   margin-top: 10px;
   margin-bottom: 120px;
   text-align: left;
   font-size: 28px;
 }
-.block2 > .sub-heading3,
-.block3 > .main-heading1 {
+.block2 > .sub-heading3 {
   margin-top: 0;
   margin-bottom: 20px;
   font-size: 16px;
@@ -93,8 +90,8 @@
   line-height: 20px;
 }
 
-.block3 > .white-button{
-    width: 400px;
+#block3 > .white-button {
+  width: 400px;
 }
 
 .block4 {
@@ -126,6 +123,42 @@
   -moz-box-pack: justify;
   justify-content: space-between;
 }
+
+.block5 > .left {
+  display: flex;
+  flex-direction: column;
+  -moz-box-pack: end;
+  justify-content: flex-end;
+  width: 50%;
+}
+
+.left-div {
+  font-size: 60px;
+  /* font-family: "gilroy-bold"; */
+  letter-spacing: -1.15px;
+  line-height: 64px;
+  white-space: pre-line;
+  opacity: 0.9;
+}
+#block3{
+  background-image: url("https://web-assets.cred.club/_next/assets/images/home-page/money-matters-bg.jpg");
+}
+#block4{
+  background-image: url("https://web-assets.cred.club/_next/assets/images/home-page/security-bg.jpg");
+}
+.block5 > .right {
+  width: 50%;
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+  -moz-box-pack: end;
+  justify-content: space-between;
+  font-size: 18px;
+
+  
+
+}
+
 .sub-heading1,
 .main-heading1 {
   margin-top: 100px;
@@ -182,4 +215,19 @@
   border-radius: 40px;
   cursor: pointer;
   margin-top: 58px;
+}
+
+.rdp2d4-6,
+.rdp2d4-7 {
+  display: flex;
+  font-family: var(--bs-font-sans-serif);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.rdp2d4-3 {
+  display: flex;
+  -moz-box-align: center;
+  align-items: center;
 }
